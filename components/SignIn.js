@@ -13,10 +13,8 @@ import colors from '../assets/colors/colors';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
-const SignIn = () => {
-
+const SignIn = ({navigation, route}) => {
     
-
     return (
         <View style={styles.container}>
             <View style={styles.statusBar}></View>
@@ -40,7 +38,7 @@ const SignIn = () => {
                 <TouchableOpacity style={styles.signinButtonWrapper}>
                     <Text style={styles.signinButtonText}>Sign in</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.signupButtonWrapper}>
+                <TouchableOpacity style={styles.signupButtonWrapper} onPress={() => navigation.navigate('SignUp')}>
                     <Text style={styles.signupButtonText}>Sign up</Text>
                 </TouchableOpacity>
                 <View style={styles.buttonSpacer}></View>
@@ -54,7 +52,8 @@ const SignIn = () => {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1,
+        backgroundColor: colors.white
     },
     statusBar: {
         backgroundColor: colors.white,
